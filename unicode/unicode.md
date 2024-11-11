@@ -3,7 +3,7 @@
 Unicode est un standard informatique qui permet des échanges de textes dans différentes langues, à un niveau mondial. Il est développé par le Consortium Unicode, qui vise au codage de texte écrit en donnant à tout caractère de n'importe quel système d'écriture un nom et un identifiant numérique, et ce de manière unifiée, quels que soient la plateforme informatique ou le logiciel utilisé.
 
 - Première publication : octobre 1991
-- Unicode 15.0, a été publiée en septembre 2022.
+- Unicode 16.0.0, publiée le 10 septembre 2024.
 
 Unicode a été développé dans le but de remplacer l'utilisation de pages de code nationales.
 
@@ -126,7 +126,7 @@ Il existe sept schémas de codage des caractères : UTF-8, UTF-16, UTF-16BE, UTF
 
 - `� U+FFFd` : caractère de remplcement en cas de problème d'encodage
 - `ZWNJ U+200C` : Zero Width Non Joiner : interdit de fusionner plusieurs entrées Unicode
-- `ZWJ U+200D` : Zero Width Joiner : permet de fusionner plusieurs entrées Unicode en un seul grapèhme ; cf. [liste emoji](https://www.unicode.org/Public/emoji/16.0/emoji-zwj-sequences.txt)
+- `ZWJ U+200D` : Zero Width Joiner : permet de fusionner plusieurs entrées Unicode en un seul grapèhme ; cf. [liste emoji](https://www.unicode.org/Public/emoji/16.0/emoji-zwj-sequences.txt) ; [séquences emoji](https://unicode.org/emoji/charts/emoji-sequences.html)
 - `LRM U+200E` : Marque gauche-à-droite
 - `RLM U+200F` : Marque droite-à-gauche
 
@@ -157,7 +157,7 @@ En pratique, cela permet d’avoir par exemple un emoji en noir et blanc qui s�
 
 1. Écrire la phrase `Voix ambiguë d’un cœur qui au zéphyr préfère les jattes de kiwis` dans un fichier texte.
 2. Enregistrer plusieurs fois ce fichier, avec des encodages différents : windows1252, ISO8859-15, UTF-8, UTF-16BE...
-3. Utiliser la commande `cat` ou `type` dans un terminal pour afficher les différents fichers. Afficher le contenu du fichier selon plusieurs encodages.
+3. Utiliser la commande `cat` ou `type` dans un terminal pour afficher les différents fichiers. Afficher le contenu du fichier selon plusieurs encodages. Utilisez également `hexdump (fichier)` (Linux) ou `Format-Hex (fichier)` (Powershell) pour voir le contenu des fichiers.
 4. Dans un autre fichier texte écrire `CAROLINE AUPICK, NÉE DUFAŸS EST LA MÈRE DU POÈTE FRANÇAIS CHARLES BAUDELAIRE. LE PRIX D’UN ŒUF EST DE 0,50 € …`. Essayer de sauvegarder ce fichier au format windows1252, ISO-8859-1 et ISO-8859-15, UTF-8 et d'afficher le contenu de ce fichier. Que deviennent les quatre caractères `Ç Œ Ÿ € …` ?
 5. Dans un fichier texte enregistrez la phrase `Les codes A4 A6 A8 B4 B8 BC BD BE diffèrent entre ISO 8859-1 et ISO-8859-15. En voici la preuve : € Š š Ž ž Œ œ Ÿ`. Enregistrez ce fichier avec l'encodage ISO-8859-15. Affichez ce fichier avec ISO-8859-1, ISO-8859-15 et windows-1252.
 6. Dans un fichier texte enregistrez la phrase suivante en `windows-1252` : `Les caractères suivants ne sont pas définis dans les deux normes ISO : ‚ ƒ „ … † ‡ ˆ ‰ ‹ ‘ ’ “ ” • – — ˜ ™ ›`. Essayer de sauvegarder ou d'afficher ce fichier en ISO-8859-1 et ISO-8859-15.
