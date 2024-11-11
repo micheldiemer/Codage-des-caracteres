@@ -1,0 +1,600 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  a4paper,
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage[]{STIXGeneral}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{french}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Typographie},
+  pdfauthor={Michel Diemer},
+  pdflang={fr-FR},
+  pdfkeywords={Unicode, Tiret, Espace, Caractère, Émoji},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\fontfamily{Consolas}
+\title{Typographie}
+\author{Michel Diemer}
+\date{2022-07-10}
+
+\begin{document}
+\frontmatter
+\maketitle
+
+{
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+\mainmatter
+\hypertarget{typographie}{%
+\section{Typographie}\label{typographie}}
+
+\hypertarget{lettres-de-la-langue-franuxe7aise}{%
+\subsection{Lettres de la langue française}\label{lettres-de-la-langue-franuxe7aise}}
+
+\texttt{ABCDEFGHIJKLMNOPQRSTUVWXYZ\ ÀÂÄ\ Ç\ ÉÈÊË\ ÎÏ\ ÔÖ\ ÙÛÜ\ Ÿ\ Æ\ Œ\ espace\ -\ \textquotesingle{}}\strut \\
+\texttt{abcdefghijklmnopqrstuvwxyz\ àâä\ ç\ éèêë\ îï\ ôö\ ùûü\ ÿ\ æ\ œ\ espace\ -\ \textquotesingle{}}\strut \\
+\texttt{pas\ d\textquotesingle{}espace\ ni\ avant\ ni\ après\ -}\strut \\
+\texttt{pas\ d\textquotesingle{}espace\ multiples}\strut \\
+Cf. \href{https://xml.insee.fr/schema/commun.html\#ChaineFrancaisOfficielMajuscule_stype}{Insee ChaineFrancaisOfficielMajuscule}\\
+Nb : le \texttt{ñ\ Ñ} ne fait pas officiellement partie des signes diacritiques de la langue française.\\
+Il n'est plus autorisé dans les noms de famille.
+
+\hypertarget{typographie-langue-franuxe7aise}{%
+\subsection{Typographie langue française}\label{typographie-langue-franuxe7aise}}
+
+\texttt{symboles\ de\ ponctuation\ ,\ ;\ :\ .\ …\ ?\ !\ «\ »\ (\ )\ {[}\ {]}\ *\ /\ -\ ’}\strut \\
+\texttt{trait\ d\textquotesingle{}union\ -\ tiret\ demi-cadratin\ –\ tiret\ cadratin\ —}\strut \\
+\texttt{trait\ d\textquotesingle{}union\ conditionnel\ -\ U+00AD\ :\ «\ malaise\ »\ se\ coupe\ en\ mal-aise\ (nm)\ ou\ en\ ma-laise\ (nf)}\strut \\
+\texttt{trait\ d\textquotesingle{}union\ insécable\ -\ U+2011\ ‑} \texttt{espace\ espace\ insécable\ espace\ demi-cadratin\ espace\ cadratin}\strut \\
+\texttt{numéro\ =\ Nº\ qui\ est\ comme\ un\ o\ exposant,\ différent\ de\ degré\ °}\strut \\
+\texttt{degré\ °\ et\ aussi\ ℃\ ℉\ K}\strut \\
+\texttt{\#\ †\ ‡\ ‘\ ’\ •\ §\ ™\ ©\ ®\ µ\ ¶}\strut \\
+\texttt{\%\ @\ +\ -\ *\ /\ \textbackslash{}\ \textless{}\ \textgreater{}\ =\ ²\ ×\ ÷\ ¼\ ½\ ¾\ ‰\ \_\ ¤\ \$\ £\ ƒ}\strut \\
+\texttt{↉\ ⅟\ ½\ ⅓\ ¼\ ⅕\ ⅙\ ⅐\ ⅛\ ⅑\ ⅒\ ⅔\ ⅖\ ¾\ ⅗\ ⅜\ ⅘\ ⅚\ ⅝\ ⅞\ \%\ ‰\ ‱}\strut \\
+\texttt{“”\ «»\ ‘’\ ‚‛\ ‹›}\strut \\
+Cf. \href{https://fr.wikipedia.org/wiki/Ponctuation\#En_fran\%C3\%A7ais}{Wikipedia Ponctuation en français} Cf. \href{http://david.carella.free.fr/fr/typographie/caracteres-et-symboles-unicode.html}{Caractères et symboles Unicode}
+
+\hypertarget{indicateur-ordinal}{%
+\subsection{Indicateur ordinal}\label{indicateur-ordinal}}
+
+\begin{itemize}
+\tightlist
+\item
+  1er 2e 2d 2de 1ers 1res 2es 2ds
+\item
+  \texttt{U+00BA\ º} MASCULINE ORDINAL INDICATOR (º) \texttt{1º\ 2º\ 3º}
+\item
+  \texttt{U+00AA\ ª} FEMININE ORDINAL INDICATOR (ª)
+\item
+  Different from
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{U+00B0\ °} DEGREE SIGN
+  \item
+    \texttt{U+02DA\ ˚} RING ABOVE
+  \item
+    \texttt{U+1D52\ ᵒ} MODIFIER LETTER SMALL O
+  \item
+    \texttt{U+1D3C\ ᴼ} MODIFIER LETTER CAPITAL O
+  \item
+    \texttt{U+2070\ ⁰} SUPERSCRIPT ZERO
+  \item
+    \texttt{U+1D43\ ᵃ} MODIFIER LETTER SMALL A
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{mathuxe9matiques}{%
+\subsection{Mathématiques}\label{mathuxe9matiques}}
+
+\hypertarget{symboles-courants}{%
+\subsubsection{Symboles courants}\label{symboles-courants}}
+
+\begin{itemize}
+\tightlist
+\item
+  `+ - / * =
+\item
+  \texttt{+\ ‒\ ÷\ ×\ =\ ¬\ ≊\ ≅\ ≈\ \textgreater{}\ ≥\ \textless{}\ ≤\ ∞\ ∑\ ∏\ ≠\ √\ ∛\ ∜\ 𝜋\ 𝛑\ ±\ ǁ}
+\item
+  \texttt{−\ (U+2212\ MINUS\ SIGN)} ne pas confondre avec \texttt{‒\ (U+2012\ FIGURE\ DASH/TIRET\ NUMÉRIQUE)}
+\item
+  \texttt{≡\ ≢\ ⩵\ ⩶\ ∥\ ∦\ ∟\ ⊾\ ∠\ ∡\ ∢\ ⟀}
+\item
+  \texttt{⊕\ (XOR)\ ⇒\ ⇔}
+\item
+  \texttt{⁄\ (U+2044\ FRACTION\ BAR)\ ⌖\ ∧\ ∨}
+\item
+  \texttt{∩\ ∪\ ∋\ ∌\ ∅\ ∖\ ∄\ ∃\ ∈\ ∉\ ∀\ ⊂\ ⊃\ ⊄\ ⊅}
+\item
+  \texttt{⁰\ ¹\ ²\ ³\ ⁴\ ⁵\ ⁶\ ⁷\ ⁸\ ⁹\ ⁿ}
+\item
+  \texttt{ℕ\ ℤ\ ⅅ\ ℚ\ ℝ\ ℂ}
+\item
+  \texttt{ℇ\ ᵠ\ 𝜑\ ⅈ\ ∞\ 𝞅}
+\item
+  \texttt{∏\ ∑\ 𝛌\ 𝜆\ 𝝀\ 𝓍\ 𝒳\ 𝑓\ 𝑦\ ∫\ ∬\ ∭\ ε\ \textbar{}}
+\item
+  \texttt{𝑦\ =\ 𝑓(𝓍)}
+\item
+  \texttt{｜𝓍｜\ U+FF5C}
+\end{itemize}
+
+\hypertarget{codes-unicode}{%
+\subsubsection{Codes Unicode}\label{codes-unicode}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{×\ U+00D7} multiply
+\item
+  \texttt{÷\ U+00F7} divide
+\item
+  \texttt{−\ U+2212} minus sign
+\item
+  \texttt{∗\ U+2217} asterisk operator
+\item
+  \texttt{⁄\ U+2044} barre de fraction
+\item
+  \texttt{≈\ U+2248} Presque égal à
+\item
+  \texttt{≃\ U+2243} Asymptotiquement égal à
+\item
+  \texttt{𝜋\ U+1D70B} \href{https://en.wikipedia.org/wiki/Pi_(letter)}{Mathematical Italic Small Pi}
+\item
+  \texttt{𝛑\ U+1D6D1} Mathematical Bold Small Pi
+\item
+  \texttt{π\ U+03C0}
+\item
+  \texttt{ℇ\ U+2107} Euler
+\item
+  \texttt{ⅈ\ U+2148}
+\item
+  \texttt{φ\ U+03D5} \href{https://en.wikipedia.org/wiki/Phi}{Greek Phi Symbol}
+\item
+  \texttt{∞\ U+221E}
+\end{itemize}
+
+Cf. \href{https://www.compart.com/fr/unicode/category/Sm}{Unicode Symbole mathématique}
+
+\hypertarget{chiffres-romains}{%
+\subsubsection{Chiffres romains}\label{chiffres-romains}}
+
+\begin{longtable}[]{@{}llllllllllllll@{}}
+\toprule()
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 50 & 100 \\
+\midrule()
+\endhead
+Ⅰ & Ⅱ & Ⅲ & Ⅳ & Ⅴ & Ⅵ & Ⅶ & Ⅷ & Ⅸ & Ⅹ & Ⅺ & Ⅻ & Ⅼ & Ⅽ \\
+ⅰ & ⅱ & ⅲ & ⅳ & ⅴ & ⅵ & ⅶ & ⅷ & ⅸ & ⅹ & ⅺ & ⅻ & ⅼ & ⅽ \\
+\bottomrule()
+\end{longtable}
+
+\begin{longtable}[]{@{}llllll@{}}
+\toprule()
+500 & 1\,000 & 5\,000 & 10\,000 & 50\,000 & 100\,000 \\
+\midrule()
+\endhead
+Ⅾ ⅠↃ & Ⅿ ⅭⅠↃ ↀ & ↁ ⅠↃↃ V̅ & ↂ ⅭⅭⅠↃↃ X̅ & ↇ ⅠↃↃↃ L̅ & ↈ ⅭⅭⅭⅠↃↃↃ C̅ \\
+ⅾ ⅰↄ & ⅿ ⅽⅰↄ ↀ & ↁ ⅰↄↄ v̅ & ↂ ⅽⅽⅰↄↄ x̅ & ↇ ⅰↄↄↄ l̅ & ↈ ⅽⅽⅽⅰↄↄↄ c̅ \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{tirets-et-espaces}{%
+\subsection{Tirets et espaces}\label{tirets-et-espaces}}
+
+\hypertarget{tiretstraits-dunion}{%
+\subsubsection{Tirets--traits d'union}\label{tiretstraits-dunion}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4568}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1852}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2469}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Caractère
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Symbole
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Unicode
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+HTML
+\end{minipage} \\
+\midrule()
+\endhead
+trait d'union / signe moins / tiret & Oo-Oo & U+002D & \&\#x2D; \\
+trait d'union conditionnel & Oo-­-Oo & U+00AD & \&\#xAD; \\
+trait d'union & Oo‐Oo & U+2010 & \&\#x2010; \\
+trait d'union insécable & Oo‑Oo & U+2011 & \&\#x2011; \\
+tiret numérique / figure dash & Oo‒Oo & U+2012 & \&\#x2012; \\
+tiret demi-cadratin ou tiret moyen & Oo--Oo & U+2013 & \&\#x2013; \\
+tiret cadratin ou tiret long & Oo---Oo & U+2014 & \&\#x2014; \\
+tiret double cadratin & Oo⸺Oo & U+2E3A & \&\#x2E3A; \\
+tiret triple cadratin & Oo⸻Oo & U+2E3B & \&\#x2E3B; \\
+barre horizontale & Oo―Oo & U+2015 & \&\#x2015; \\
+puce trait d'union & Oo⁃Oo & U+2043 & \&\#x2043; \\
+signe moins & Oo−Oo & U+2212 & \&\#x2212; \\
+filet horizontal & Oo─Oo & U+2500 & \&\#x2500; \\
+filet horizontal double & Oo──Oo & U+2500,U+2500 & \&\#x2500;\&\#x2500; \\
+Tiret cadratin minuscule & O﹘Oo & U+FE58 & \&\#xFE58; \\
+Tiret minuscule & O﹣Oo & U+FE63 & \&\#xFE63; \\
+Tiret pleine chasse & Oo－Oo & U+FF0D & \&\#xFF0D; \\
+\bottomrule()
+\end{longtable}
+
+Source :
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://www.compart.com/fr/unicode/category/Pd}{Tiret}
+\item
+  \href{https://fr.wikipedia.org/wiki/Tiret}{Tiret - Wikipedia}
+\item
+  \href{https://en.wikipedia.org/wiki/Dash}{Dash = Tiret}
+\item
+  \href{https://fr.wikipedia.org/wiki/Trait_d\%27union}{Trait d'Union - Wikipedia}
+\item
+  \href{https://en.wikipedia.org/wiki/Hyphen}{Hyphen = Trait d'Union}
+\item
+  \href{https://fr.wikipedia.org/wiki/Signes_plus_et_moins}{Signe Plus et Moins}
+\item
+  \href{https://en.wikipedia.org/wiki/Plus_and_minus_signs}{Plus Minus sign}
+\end{itemize}
+
+\hypertarget{trait-dunion-conditionnel-exemple}{%
+\paragraph{Trait d'union conditionnel : exemple}\label{trait-dunion-conditionnel-exemple}}
+
+\hypertarget{anticonstitutionnellement}{%
+\subparagraph{anticonstitutionnellement}\label{anticonstitutionnellement}}
+
+anticonstitutionnellement anticonstitutionnellement anticonstitutionnellement anticonstitutionnellement anticonstitutionnellement anticonstitutionnellement anticonstitutionnellement anticonstitutionnellement anticonstitutionnellement anticonstitutionnellement anticonstitutionnellement anticonstitutionnellement
+
+\hypertarget{anti-consti-tution-nellemement}{%
+\subparagraph{anti-consti-tution-nellemement}\label{anti-consti-tution-nellemement}}
+
+anti­consti­tution­nellement anti­consti­tution­nellement anti­consti­tution­nellement anti­consti­tution­nellement anti­consti­tution­nellement anti­consti­tution­nellement anti­consti­tution­nellement anti­consti­tution­nellement anti­consti­tution­nellement anti­consti­tution­nellement anti­consti­tution­nellement anti­consti­tution­nellement anti­consti­tution­nellement anti­consti­tution­nellement anti­consti­tution­nellement anti­consti­tution­nellement anti­consti­tution­nellement anti­consti­tution­nellement anti­consti­tution­nellement anti­consti­tution­nellement anti­consti­tution­nellement
+
+\hypertarget{a-n-t-i-c-o-n-s-t-i-t-u-t-i-o-n-n-e-l-l-e-m-e-m-e-n-t}{%
+\subparagraph{a-n-t-i-c-o-n-s-t-i-t-u-t-i-o-n-n-e-l-l-e-m-e-m-e-n-t}\label{a-n-t-i-c-o-n-s-t-i-t-u-t-i-o-n-n-e-l-l-e-m-e-m-e-n-t}}
+
+a­n­t­i­c­o­n­s­t­i­t­u­t­i­o­n­n­e­l­l­e­m­e­n­t­ a­n­t­i­c­o­n­s­t­i­t­u­t­i­o­n­n­e­l­l­e­m­e­n­t­ a­n­t­i­c­o­n­s­t­i­t­u­t­i­o­n­n­e­l­l­e­m­e­n­t­ a­n­t­i­c­o­n­s­t­i­t­u­t­i­o­n­n­e­l­l­e­m­e­n­t­ a­n­t­i­c­o­n­s­t­i­t­u­t­i­o­n­n­e­l­l­e­m­e­n­t­ a­n­t­i­c­o­n­s­t­i­t­u­t­i­o­n­n­e­l­l­e­m­e­n­t­ a­n­t­i­c­o­n­s­t­i­t­u­t­i­o­n­n­e­l­l­e­m­e­n­t­ a­n­t­i­c­o­n­s­t­i­t­u­t­i­o­n­n­e­l­l­e­m­e­n­t­ a­n­t­i­c­o­n­s­t­i­t­u­t­i­o­n­n­e­l­l­e­m­e­n­t­ a­n­t­i­c­o­n­s­t­i­t­u­t­i­o­n­n­e­l­l­e­m­e­n­t­ a­n­t­i­c­o­n­s­t­i­t­u­t­i­o­n­n­e­l­l­e­m­e­n­t­ a­n­t­i­c­o­n­s­t­i­t­u­t­i­o­n­n­e­l­l­e­m­e­n­t­
+
+\hypertarget{espaces}{%
+\subsubsection{Espaces}\label{espaces}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1236}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.0347}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.0541}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.7876}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Caractère
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Symbole
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Unicode
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Description
+\end{minipage} \\
+\midrule()
+\endhead
+tabulation & Oo Oo & U+0009 & \\
+line feed & ⸻LF & U+000A & \\
+line tabulation / vertical tab & ⸻VT & U+000B & \\
+form feed & ⸻FF & U+000C & \\
+carriage return & ---CR LF & U+000D & \\
+CR LF & -CRLF & U+000DU+000A & \\
+next line & ⸻NEL & U+0085 & \\
+espace & Oo Oo & U+0020 & espace normale, espace sécable, dite aussi «~espace-mot~» \\
+espace insécable & Oo~Oo & U+00A0 & no-break space en anglais, pour espace insécable. \\
+ogham space mark & Oo Oo & U+1680 & Used for interword separation in Ogham text. Normally a vertical line in vertical text or a horizontal line in horizontal text, but may also be a blank space in ``stemless'' fonts. Requires an Ogham font. \\
+en quad & Oo Oo & U+2000 & équivalent à U+2002 \\
+em quad & Oo Oo & U+2001 & équivalent à U+2003 \\
+espace demi-cadratin & Oo Oo & U+2002 & \\
+espace cadratin & Oo Oo & U+2003 & de la largeur d'un M, normalement,~\&\#x2003;~(ou~\&\#8195;) \\
+1⁄3 cadratin & Oo Oo & U+2004 & \&emsp13; \\
+1⁄4 cadratin & Oo Oo & U+2005 & \&emsp14; \\
+1⁄6 de cadratin & Oo Oo & U+2006 & \\
+figure space & Oo Oo & U+2007 & Figure space. In fonts with monospaced digits, equal to the width of one digit. HTML/XML named entity: \\
+punctuation space & Oo Oo & U+2008 & As wide as the narrow punctuation in a font, i.e.~the advance width of the period or comma.{[}2{]} HTML/XML named entity: \\
+espace fine sécable & Oo Oo & U+2009 & thin space en anglais \\
+espace ultra-fine & Oo Oo & U+200A & \\
+line separator & ⸻ & U+2028 & \\
+paragraph separator & ⸻ & U+2029 & \\
+espace fine insécable & Oo\,Oo & U+202F & espace insécable étroite dans la traduction française d'Unicode ; Narrow Non Breaking Space \\
+medium mathematical space & Oo Oo & U+205F & Used in mathematical formulae. Four-eighteenths of an em. \\
+ideographic space & Oo 　 Oo & U+3000 & As wide as a CJK character cell (fullwidth). Used, for example, in tai tou. \\
+espace, symbole 1 & Oo␢Oo & U+2422 & Ce glyphe est une représentation visuelle, utilisée lorsque l'on souhaite matérialiser graphiquement une espace. Nommé en Unicode symbole visuel pour l'espace (ou blank symbol, en anglais). \\
+espace, symbole 2 & Oo␣Oo & U+2423 & Ce glyphe est une représentation visuelle, utilisée lorsque l'on souhaite matérialiser graphiquement une espace. Nommé en Unicode boîte ouverte (ou open box, en anglais) \\
+\bottomrule()
+\end{longtable}
+
+Pour aller plus loin :
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://www.compart.com/fr/unicode/bidiclass/WS}{Unicode Classe WS}
+\item
+  \href{https://www.compart.com/fr/unicode/category/Zs}{Unicode Catégorie Zs}
+\item
+  \href{https://en.wikipedia.org/wiki/Newline\#Unicode}{NewLine}
+\item
+  \href{https://en.wikipedia.org/wiki/Whitespace_character\#:~:text=In\%20computer\%20programming\%2C\%20whitespace\%20is,an\%20area\%20on\%20a\%20page.}{WhiteSpace Character}
+\item
+  \href{https://www.compart.com/en/unicode/category/Zs}{Unicode Space Separator}
+\item
+  \href{https://unicode-explorer.com/b/2000}{Unicode General Punctuation}
+\end{itemize}
+
+\hypertarget{symboles}{%
+\subsection{Symboles}\label{symboles}}
+
+\texttt{🇫🇷} DRAPEAU FRANÇAIS
+
+\begin{itemize}
+\tightlist
+\item
+  U+1F1EB U+1F1F7 Regional Indicator Symbol Letter F Regional Indicator Symbol Letter R
+\item
+  \href{https://unicode.org/emoji/charts/full-emoji-list.html}{emoji}
+\end{itemize}
+
+\hypertarget{fullwidth}{%
+\subsection{Fullwidth}\label{fullwidth}}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{➕❌🖊️🔲⚪✅💑}
+\item
+  \href{https://www.fileformat.info/info/unicode/block/halfwidth_and_fullwidth_forms/list.htm}{Fullwidth Halfwidth}
+\end{itemize}
+
+\hypertarget{divers}{%
+\subsection{Divers}\label{divers}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{\textless{}pre\textgreater{}}
+
+\NormalTok{    Char Number Comment}
+\NormalTok{    ← }\DecValTok{\&\#x2190;} \DecValTok{\&\#8592;}\NormalTok{ left arrow / APL WIKIPEDIA}
+\NormalTok{    ↑ }\DecValTok{\&\#x2191;} \DecValTok{\&\#8593;}\NormalTok{ up arrow}
+\NormalTok{    → }\DecValTok{\&\#x2192;} \DecValTok{\&\#8594;}\NormalTok{ right arrow}
+\NormalTok{    ↓ }\DecValTok{\&\#x2193;} \DecValTok{\&\#8595;}\NormalTok{ down arrow}
+
+\NormalTok{    ⟵ U+27F5 https://unicode{-}table.com/fr/sets/arrow{-}symbols/}
+\NormalTok{    ⟶ U+27F6}
+\NormalTok{    ⇒ U+21D2 https://unicode{-}table.com/en/sets/mathematical{-}signs/}
+\NormalTok{    ⇐ U+21D0}
+\NormalTok{    ⇔ U+21D4}
+
+\NormalTok{    ✓ }\DecValTok{\&\#x2198;} \DecValTok{\&\#8600;}
+\NormalTok{    □ }\DecValTok{\&\#x25A1;} \DecValTok{\&\#9633;}
+\NormalTok{    ■ }\DecValTok{\&\#x25A0;} \DecValTok{\&\#9632;}
+
+\NormalTok{    ✅ U+2705}
+\NormalTok{    ✓ U+2713}
+\NormalTok{    ✔ U+2714}
+\NormalTok{    ☑ U+2611}
+\NormalTok{    🗸 U+1F5F8 }\DecValTok{\&\#128504;}
+
+
+\NormalTok{    ❌ U+274C }\DecValTok{\&\#10060;}
+\NormalTok{    ❎ U+274E }\DecValTok{\&\#10062;}
+\NormalTok{    ✖ U+2716}
+\NormalTok{    ✗ U+2717}
+\NormalTok{    ✘ U+2718}
+\NormalTok{    ☒ U+2612}
+\NormalTok{    𐄂 U+10102}
+
+
+\NormalTok{    https://unicode{-}table.com/en/emoji/people{-}and{-}body/}
+
+\NormalTok{    👍 U+1F44D}
+\NormalTok{    ♂ U+2642 Male}
+\NormalTok{    ♀ U+2640 Female Femelle}
+\NormalTok{    ⚥ U+26A5 Male Female}
+\NormalTok{    ⚭ U+26AD Mariage}
+\NormalTok{    👦 U+1F466 Garçon}
+\NormalTok{    👧 U+1F467 Fille}
+\NormalTok{    👨 U+1F468 Homme}
+\NormalTok{    👩 U+1F469 Femme}
+\NormalTok{    🤰 U+1F930 Pregnant Woman Femme enceinte}
+
+\NormalTok{    0 1 2 3 4 5 6 7 8 9 A B C D E F}
+\NormalTok{    U+1F600 😀 😁 😂 😃 😄 😅 😆 😇 😈 😉 😊 😋 😌 😍 😎 😏}
+\NormalTok{    U+1F610 😐 😑 😒 😓 😔 😕 😖 😗 😘 😙 😚 😛 😜 😝 😞 😟}
+\NormalTok{    U+1F620 😠 😡 😢 😣 😤 😥 😦 😧 😨 😩 😪 😫 😬 😭 😮 😯}
+\NormalTok{    U+1F630 😰 😱 😲 😳 😴 😵 😶 😷 😸 😹 😺 😻 😼 😽 😾 😿}
+\NormalTok{    U+1F640 🙀 🙁 🙂 🙃 🙄 🙅 🙆 🙇 🙈 🙉 🙊 🙋 🙌 🙍 🙎 🙏}
+\KeywordTok{\textless{}/pre\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{cartes}{%
+\subsection{Cartes}\label{cartes}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 32\tabcolsep) * \real{0.1273}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 32\tabcolsep) * \real{0.0545}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 32\tabcolsep) * \real{0.0545}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 32\tabcolsep) * \real{0.0545}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 32\tabcolsep) * \real{0.0545}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 32\tabcolsep) * \real{0.0545}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 32\tabcolsep) * \real{0.0545}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 32\tabcolsep) * \real{0.0545}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 32\tabcolsep) * \real{0.0545}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 32\tabcolsep) * \real{0.0545}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 32\tabcolsep) * \real{0.0545}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 32\tabcolsep) * \real{0.0545}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 32\tabcolsep) * \real{0.0545}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 32\tabcolsep) * \real{0.0545}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 32\tabcolsep) * \real{0.0545}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 32\tabcolsep) * \real{0.0545}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 32\tabcolsep) * \real{0.0545}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+0
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+4
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+5
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+6
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+7
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+8
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+9
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+A
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+B
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+C
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+D
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+E
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+F
+\end{minipage} \\
+\midrule()
+\endhead
+U+1F0Ax & 🂠 & 🂡 & 🂢 & 🂣 & 🂤 & 🂥 & 🂦 & 🂧 & 🂨 & 🂩 & 🂪 & 🂫 & 🂬 & 🂭 & 🂮 & \\
+U+1F0Bx & & 🂱 & 🂲 & 🂳 & 🂴 & 🂵 & 🂶 & 🂷 & 🂸 & 🂹 & 🂺 & 🂻 & 🂼 & 🂽 & 🂾 & 🂿 \\
+U+1F0Cx & & 🃁 & 🃂 & 🃃 & 🃄 & 🃅 & 🃆 & 🃇 & 🃈 & 🃉 & 🃊 & 🃋 & 🃌 & 🃍 & 🃎 & 🃏 \\
+U+1F0Dx & & 🃑 & 🃒 & 🃓 & 🃔 & 🃕 & 🃖 & 🃗 & 🃘 & 🃙 & 🃚 & 🃛 & 🃜 & 🃝 & 🃞 & 🃟 \\
+U+1F0Ex & 🃠 & 🃡 & 🃢 & 🃣 & 🃤 & 🃥 & 🃦 & 🃧 & 🃨 & 🃩 & 🃪 & 🃫 & 🃬 & 🃭 & 🃮 & 🃯 \\
+U+1F0Fx & 🃰 & 🃱 & 🃲 & 🃳 & & 🃴 & 🃵 & & & & & & & & & \\
+\bottomrule()
+\end{longtable}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{    ♥ U+2665 ♡ U+2661}
+\NormalTok{    ♠ U+2660 ♤ U+2664}
+\NormalTok{    ♦ U+2666 ♢ U+2662}
+\NormalTok{    ♣ U+2663 ♧ U+2667}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{sources}{%
+\subsection{Sources}\label{sources}}
+
+(Compart.com){[}https://www.compart.com/fr/unicode/{]}
+
+\backmatter
+\end{document}
