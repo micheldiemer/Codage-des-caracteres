@@ -1,0 +1,13 @@
+En cp437, les codes 01 à 31 ne suivent pas la norme ASCII.
+
+Voici les glyphes associées aux codes 01 à 31.
+
+Humanité    ☺☻♂♀
+Cartes      ♥♦♣♠
+Puces       •◘○◙
+Typographie ¶§
+Autres      ♪♫☼‼▬∟
+Flèches
+   ▲      ↑
+  ◄ ►    ← →   ↕↨↔
+   ▼      ↓

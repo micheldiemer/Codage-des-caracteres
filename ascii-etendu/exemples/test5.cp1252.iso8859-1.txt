@@ -1,0 +1,22 @@
+¤¦¨´¸¼½¾
+€ŠšŽžŒœŸ
+
+ligne 1 - ISO 8859-1/cp1252
+  monetaire
+  barre verticale
+  trema
+  apostrophe
+  cedille
+  1 / 4
+  1 / 2
+  3 / 4
+
+ligne 2 - cp1252
+  euro
+  S caron
+  s caron
+  Z caron
+  z caron
+  E dans O
+  e dans o
+  Y trema

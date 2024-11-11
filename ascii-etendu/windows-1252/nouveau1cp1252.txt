@@ -1,0 +1,13 @@
+Jules BALAŸ (1795-1862) est un industriel, banquier et homme politique français.
+Un œuf, des Œeufs.
+
+
+(tous les codes sont en hexadécimal)
+
+Character    ¦        ‚ ¦  ƒ ¦  „ ¦  … ¦  † ¦  ‡ ¦  ˆ ¦  ‰ ¦  ‹ ¦
+Windows-1252 ¦       82 ¦ 83 ¦ 84 ¦ 85 ¦ 86 ¦ 87 ¦ 88 ¦ 89 ¦ 8B ¦
+-----------------------------------------------------------------
+Character    ¦  ‘ ¦   ’ ¦  “ ¦  ” ¦  • ¦  – ¦  — ¦  ˜ ¦  ™ ¦  › ¦
+Windows-1252 ¦ 91 ¦  92 ¦ 93 ¦ 94 ¦ 95 ¦ 96 ¦ 97 ¦ 98 ¦ 99 ¦ 9B ¦
+-----------------------------------------------------------------
+

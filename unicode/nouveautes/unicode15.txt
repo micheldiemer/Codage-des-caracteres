@@ -1,0 +1,24 @@
+The six completely new emoji concepts within Emoji 15.1 are:
+
+    🙂‍↔️ Head Shaking Horizontally
+    🙂‍↕️ Head Shaking Vertically
+    🐦‍🔥 Phoenix
+    🍋‍🟩 Lime
+    🍄‍🟫 Brown Mushroom
+    🔗‍💥 Broken Chain
+
+The four new family emojis are:
+
+    🧑‍🧑‍🧒  Family: Adult, Adult, Child
+    🧑‍🧒‍🧒   Family: Adult, Child, Child
+    🧑‍🧒  Family: Adult, Child
+    🧑‍🧑‍🧒‍🧒   Family: Adult, Adult, Child, Child
+
+The six people emoji characters that now have direction-specifying variations are:
+
+    🚶‍➡️ Person Walking Facing Right
+    🏃‍➡️ Person Running Facing Right
+    🧎‍➡️ Person Kneeling Facing Right
+    🧑‍🦯‍➡️ Person with White Cane Facing Right
+    🧑‍🦽‍➡️ Person in Manual Wheelchair Facing Right
+    🧑‍🦼‍➡️ Person in Motorized Wheelchair Facing Right

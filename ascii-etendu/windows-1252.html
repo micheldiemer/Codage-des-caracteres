@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+    <title>Windows-1252 ANSI</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  </head>
+
+  <body>
+    <pre>
+       A   B  C  D  E  F
+      10  11 12 13 14 15
+
+      Table de 16 :
+      &times;0=0    &times;1=16  &times;2=32  &times;3=48   &times;4=64    &times;5=80  &times;6=96  &times;7=112
+      &times;8=128  &times;9=144 &times;A=160 &times;B=176  &times;C=192   &times;D=208 &times;E=224 &times;F=240
+
+   </pre
+    >
+    <pre>
+	x0	x1	x2	x3	x4	x5	x6	x7	x8	x9	xA	xB	xC	xD	xE	xF
+0x	NUL	SOH	STX	ETX	EOT	ENQ	ACK	BEL	BS	HT	LF	VT	FF	CR	SO	SI
+1x	DLE	DC1	DC2	DC3	DC4	NAK	SYN	ETB	CAN	EM	SUB	ESC	FS	GS	RS	US
+2x	SP	!	"	#	$	%	&amp;	'	(	)	*	+	,	-	.	/
+3x	0	1	2	3	4	5	6	7	8	9	:	;	&lt;	=	>	?
+4x	@	A	B	C	D	E	F	G	H	I	J	K	L	M	N	O
+5x	P	Q	R	S	T	U	V	W	X	Y	Z	[	\	]	^	_
+6x	`	a	b	c	d	e	f	g	h	i	j	k	l	m	n	o
+7x	p	q	r	s	t	u	v	w	x	y	z	{	|	}	~	DEL
+8x	€	———	&sbquo;	ƒ	„	…	†	‡	&circ;	‰	Š	&lsaquo;	Œ	———	Ž	———
+9x	———	&lsquo;	’	“	”	•	–	—	&tilde;	™	š	&rsaquo;	œ	———	ž	Ÿ
+Ax	-&nbsp;|	¡	¢	£	¤	¥	¦	§	¨	©	ª	«	¬	-&shy;|	®	¯
+Bx	°	±	²	³	´	µ	¶	·	&cedil;	¹	º	»	¼	½	¾	¿
+Cx	À	Á	Â	Ã	Ä	Å	Æ	Ç	È	É	Ê	Ë	Ì	Í	Î	Ï
+Dx	Ð	Ñ	Ò	Ó	Ô	Õ	Ö	&times;	Ø	Ù	Ú	Û	Ü	Ý	Þ	ß
+Ex	à	á	â	ã	ä	å	æ	ç	è	é	ê	ë	ì	í	î	ï
+Fx	ð	ñ	ò	ó	ô	õ	ö	÷	ø	ù	ú	û	ü	ý	þ	ÿ
+
+https://en.wikipedia.org/wiki/Windows-1252
+
+
+Positions non allouées Windows 1252
+81 8D 8F 90 9D
+
+Positions non allouées ISO8859-1
+8X - 9X
+
+
+Character    ¦        &sbquo; ¦  ƒ ¦    ¦  … ¦  † ¦  ‡ ¦  &circ; ¦  ‰ ¦  &lsaquo; ¦
+Windows-1252 ¦       82 ¦ 83 ¦ 84 ¦ 85 ¦ 86 ¦ 87 ¦ 88 ¦ 89 ¦ 8B ¦
+-----------------------------------------------------------------
+Character    ¦  &lsquo; ¦   ’ ¦  “ ¦  ” ¦  • ¦  – ¦  — ¦  &tilde; ¦  ™ ¦  &rsaquo; ¦
+Windows-1252 ¦ 91 ¦  92 ¦ 93 ¦ 94 ¦ 95 ¦ 96 ¦ 97 ¦ 98 ¦ 99 ¦ 9B ¦
+-----------------------------------------------------------------
+
+Character    ¦    € ¦   Š ¦   š ¦   Ž ¦   ž ¦   Œ ¦   œ ¦   Ÿ ¦  ¤ ¦  ¦ ¦  ¨ ¦  ´ ¦  &cedil; ¦  ¼ ¦  ½ ¦  ¾ ¦
+-------------------------------------------------------------------------------------------------------
+ISO 8859-1   ¦    – ¦   – ¦   – ¦   – ¦   – ¦   – ¦   – ¦   – ¦ A4 ¦ A6 ¦ A8 ¦ B4 ¦ B8 ¦ BC ¦ BD ¦ BE ¦
+ISO 8859-15  ¦   A4 ¦  A6 ¦  A8 ¦  B4 ¦  B8 ¦  BC ¦  BD ¦  BE ¦  – ¦  – ¦  – ¦  – ¦  – ¦  – ¦  – ¦  – ¦
+Windows-1252 ¦   80 ¦  8A ¦  9A ¦  8E ¦  9E ¦  8C ¦  9C ¦  9F ¦ A4 ¦ A6 ¦ A8 ¦ B4 ¦ B8 ¦ BC ¦ BD ¦ BE ¦
+Unicode      ¦ 20AC ¦ 160 ¦ 161 ¦ 17D ¦ 17E ¦ 152 ¦ 153 ¦ 178 ¦ A4 ¦ A6 ¦ A8 ¦ B4 ¦ B8 ¦ BC ¦ BD ¦ BE ¦
+</pre
+    >
+  </body>
+</html>

@@ -1,0 +1,60 @@
+
+Ce fichier est à ouvrir en windows-1252
+
+Il montre comment les caractères 1252 sont encodés en utf8 et redécodés en 1252
+
+
+     x0   x1   x2   x3   x4   x5   x6   x7   x8   x9   xA   xB   xC  xD   xE   xF
+8x   €    ???  ‚    ƒ    „    …    †    ‡    ˆ    ‰    Š    ‹    Œ   ???      ???
+9x   ???  ‘    ’    “    ”    •    –    —    ˜    ™    š    ›    œ   ???      Ÿ
+Ax   NBSP ¡    ¢    £    ¤    ¥    ¦    §    ¨    ©    ª    «    ¬   SHY  ®    ¯
+Bx   °    ±    ²    ³    ´    µ    ¶    ·    ¸    ¹    º    »    ¼   ½    ¾    ¿
+Cx   À    Á    Â    Ã    Ä    Å    Æ    Ç    È    É    Ê    Ë    Ì   Í    Î    Ï
+Dx   Ğ    Ñ    Ò    Ó    Ô    Õ    Ö    ×    Ø    Ù    Ú    Û    Ü   İ    Ş    ß
+Ex   à    á    â    ã    ä    å    æ    ç    è    é    ê    ë    ì   í    î    ï
+Fx   ğ    ñ    ò    ó    ô    õ    ö    ÷    ø    ù    ú    û    ü   ı    ş    ÿ
+
+8x   â‚¬  ???  â€š  Æ’   â€  â€¦  â€   â€¡  Ë†   â€°  Å    â€¹  Å’  ???  Å½   ???
+9x   ???  â€˜  â€™  â€œ  â€   â€¢  â€“  â€”  Ëœ   â„¢  Å¡   â€º  Å“  ???  Å¾   Å¸
+Ax   ???  Â¡   Â¢   Â£   Â¤   Â¥   Â¦   Â§   Â¨   Â©   Âª   Â«   Â¬  ???  Â®   Â¯
+Bx   Â°   Â±   Â²   Â³   Â´   Âµ   Â¶   Â·   Â¸   Â¹   Âº   Â»   Â¼  Â½   Â¾   Â¿
+Cx   Ã€   Ã    Ã‚   Ãƒ   Ã„   Ã…   Ã†   Ã‡   Ãˆ   Ã‰   ÃŠ   Ã‹   ÃŒ  Ã    Ã   Ã
+Dx   Ã    Ã‘   Ã’   Ã“   Ã”   Ã•   Ã–   Ã—   Ã˜   Ã™   Ãš   Ã›   Ãœ  Ã    Ã   ÃŸ
+Ex   Ã    Ã¡   Ã¢   Ã£   Ã¤   Ã¥   Ã¦   Ã§   Ã¨   Ã©   Ãª   Ã«   Ã¬  Ã­   Ã®   Ã¯
+Fx   Ã°   Ã±   Ã²   Ã³   Ã´   Ãµ   Ã¶   Ã·   Ã¸   Ã¹   Ãº   Ã»   Ã¼  Ã½   Ã¾   Ã¿
+
+
+Le code Unicode de é est 0x0000E9 = 0b11101001
+Le code Unicode de é se trouve dans 0x00000080-0x000007FF
+   donc pour coder le caractère é en UTF-8
+        on utilise 2 octets sous la forme binaire 110xxxxx-10xxxxxx
+On ajoute 3 bits à 0x0000E9 : 00011_101001
+On remplace les x par les bits de 0x0000E9
+   110_00011 - 10_101001
+11000011 en binaire c'est C3 en hexadécimal donc le caractère Ã
+10101001 en binaire c'est A9 en hexadécimal donc le caractère ©
+
+Le é en UTF-8 devient Ã© en Windows 1252
+Le Ã© en Windows 1252 a la forme binaire
+                  11000011 10101001
+   cela est comme 110xxxxx-10xxxxxx
+                     00011   101001
+    on enlève le formatage utf-8
+	on colle 000_1110_1001
+	000_1110_1001 en binaire devient E9 en hexadécimal
+    on peut ajouter autant de 0 qu'on veut U+00E9
+Dans la table Unicode U+00E9 c'est le caractère é
+Le caractère é encodé en utf-8 donne 0xC3A9
+0xC3A9 en Windows-1252 c'est Ã©
+
+
+Le caractère Ÿ
+Unicode 0x0178
+UTF-8 0xC5 0xB8 Å¸
+11000101_10111000
+   00101111000
+Hexadécimal 0x0178
+Dans la table Unicode U+0178 c'est le caractère Ÿ
+Ÿ en UTF-8 c'est 0xC5B8
+0xC5B8 en windows-1252 c'est Å¸
+0xC5B8 n'existe pas défini en ISO 8859

@@ -1,0 +1,20 @@
+espace insecable
+A0 Oo oO
+FF OoÿoO
+
+symbole euro
+80 €
+A4 ¤
+
+e accent aigu
+E9 é
+82 ‚
+
+c cedille
+C7 E7 Çç
+80 87 €‡
+
+y trema
+8F FF Ÿÿ
+BE FF ¾ÿ
+98    ˜
