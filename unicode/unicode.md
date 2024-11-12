@@ -152,6 +152,8 @@ En pratique, cela permet d’avoir par exemple un emoji en noir et blanc qui s�
 - [Rechercher un caractère, trouver des polices, …](https://www.fileformat.info/info/unicode/)
 - [Emoji to text](https://mefody.dev/chunks/emoji-to-text/)
 - [Détails sur les émoji](https://tonsky.me/blog/emoji/)
+- [c.r74n.com](https://c.r74n.com/unicode/)
+- [xahlee.info](http://xahlee.info/comp/unicode_arrows.html)
 
 ## Exercices
 
